@@ -6,10 +6,18 @@ describe("routes : static", () => {
 
   describe("GET /", () => {
 
-    it("should return status code 200 and have 'Welcome Bloccit' in the body of the response", (done) => {
+    it("should return status code 200 and have 'Welcome to Bloccit' in the body of the response", (done) => {
       request.get(base, (err, res, body) => {
         expect(res.statusCode).toBe(200);
-        expect(body).toContain("Welcome Bloccit");
+        expect(body).toContain("Welcome to Bloccit");
+        done();
+      });
+    });
+
+    it("should return status code 200 and have 'About Us' in the body of the response", (done) => {
+      request.get(`${base}about`, (err, res, body) => {
+        expect(res.statusCode).toBe(200);
+        expect(body).toContain("About Us");
         done();
       });
     });
