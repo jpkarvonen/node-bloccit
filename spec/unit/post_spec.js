@@ -40,7 +40,7 @@ describe("Post", () => {
         topicId: this.topic.id
       })
       .then((post) => {
-        expet(post.title).toBe("Pros of Cryosleep during the long journey");
+        expect(post.title).toBe("Pros of Cryosleep during the long journey");
         expect(post.body).toBe("1. Not having to answer the 'are we there yet?' question.");
         done();
       })
