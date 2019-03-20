@@ -54,7 +54,7 @@ module.exports = {
         });
       } else {
         req.flash("notice", "You are not authorized to do that.")
-        callback(401);
+        callback(303);
       }
     })
     .catch((err) => {
