@@ -46,7 +46,7 @@ describe("routes : posts", () => {
 
    });
 
-  describe("guest permorming CRUD actions for Post", () => {
+  describe("guest performing CRUD actions for Post", () => {
 
     describe("GET /topics/:topicId/posts/:id", () => {
 
@@ -65,7 +65,7 @@ describe("routes : posts", () => {
       it("should redirect to topics show view",  (done) => {
         request.get(`${base}/${this.topic.id}/posts/new`, (err, res, body) => {
           expect(err).toBeNull();
-          expect(body).toContain(`${this.topic.title}`);
+          expect(body).toContain("Bloccit");
           done();
         });
       });

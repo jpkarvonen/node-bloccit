@@ -5,12 +5,12 @@ module.exports = {
 
   new(req, res, next){
     const authorized =  new Authorizer(req.user).new();
-
+    var topicId = req.params.topicId;
     if (authorized) {
-      res.render("posts/new", {topicId: req.params.topicId});
+      res.render("posts/new", {topicId: topicId});
     } else {
       req.flash("notice", "You must be signed in to do that.");
-      res.redirect(`/topics/${req.params.topicId}`);
+      res.redirect(`/topics/${topicId}`);
     }
   },
 
